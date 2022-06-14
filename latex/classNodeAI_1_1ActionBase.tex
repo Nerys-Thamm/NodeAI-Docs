@@ -1,0 +1,105 @@
+\hypertarget{classNodeAI_1_1ActionBase}{}\doxysection{Node\+AI.\+Action\+Base Class Reference}
+\label{classNodeAI_1_1ActionBase}\index{NodeAI.ActionBase@{NodeAI.ActionBase}}
+
+
+The base class for Action Nodes.  
+
+
+Inheritance diagram for Node\+AI.\+Action\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classNodeAI_1_1ActionBase}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override \mbox{\hyperlink{classNodeAI_1_1NodeData_ac6922af1bb0a7d7caf6dd2aa284506bb}{Node\+Data.\+State}} \mbox{\hyperlink{classNodeAI_1_1ActionBase_ac78aa7d57d8b86c33f18a0fec2ee77de}{Eval}} (\mbox{\hyperlink{classNodeAI_1_1NodeAI__Agent}{Node\+AI\+\_\+\+Agent}} agent, \mbox{\hyperlink{classNodeAI_1_1NodeTree_1_1Leaf}{Node\+Tree.\+Leaf}} current)
+\begin{DoxyCompactList}\small\item\em Eval is called when the node is evaluated, and contains all of the logic for the node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The base class for Action Nodes. 
+
+Action Nodes are the base class for all nodes that perform actions. Actions are performed by the agent and involve some sort of logic that determines the behaviour of the agent or interacts with the environment. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public} \textcolor{keyword}{class }MyActionNode : ActionNode}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keyword}{public} MyActionNode()}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{       \mbox{\hyperlink{classNodeAI_1_1RuntimeBase_a5fb268786ab921708445622258467afc}{tooltip}} = \textcolor{stringliteral}{"{}An Example Action Node"{}};}
+\DoxyCodeLine{       AddProperty<float>(\textcolor{stringliteral}{"{}MyProperty"{}}, \textcolor{stringliteral}{"{}My Property"{}}, 0.0f);}
+\DoxyCodeLine{   \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keyword}{public} \textcolor{keyword}{override} NodeData.State \mbox{\hyperlink{classNodeAI_1_1ActionBase_ac78aa7d57d8b86c33f18a0fec2ee77de}{Eval}}(NodeAI\_Agent agent, NodeTree.Leaf current)}
+\DoxyCodeLine{ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \textcolor{keywordflow}{if}(...) \textcolor{comment}{// Check if the node has failed}}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{      \mbox{\hyperlink{classNodeAI_1_1RuntimeBase_a7c14c35b8b17324d8c7b8ae7511662eb}{state}} = NodeData.\mbox{\hyperlink{classNodeAI_1_1NodeData_ac6922af1bb0a7d7caf6dd2aa284506bb}{State}}.Failure;  <br>}
+\DoxyCodeLine{      \textcolor{keywordflow}{return} NodeData.State.Failure;    <br>}
+\DoxyCodeLine{   \}}
+\DoxyCodeLine{   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(...) \textcolor{comment}{// Check if the node has succeeded}}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{     \mbox{\hyperlink{classNodeAI_1_1RuntimeBase_a7c14c35b8b17324d8c7b8ae7511662eb}{state}} = NodeData.\mbox{\hyperlink{classNodeAI_1_1NodeData_ac6922af1bb0a7d7caf6dd2aa284506bb}{State}}.Success;}
+\DoxyCodeLine{     \textcolor{keywordflow}{return} NodeData.State.Success;}
+\DoxyCodeLine{   \}}
+\DoxyCodeLine{   \textcolor{keywordflow}{else} \textcolor{comment}{// The node is still running}}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{     \mbox{\hyperlink{classNodeAI_1_1RuntimeBase_a7c14c35b8b17324d8c7b8ae7511662eb}{state}} = NodeData.\mbox{\hyperlink{classNodeAI_1_1NodeData_ac6922af1bb0a7d7caf6dd2aa284506bb}{State}}.Running;}
+\DoxyCodeLine{     \textcolor{keywordflow}{return} NodeData.State.Running;}
+\DoxyCodeLine{   \}  <br>}
+\DoxyCodeLine{ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNodeAI_1_1ActionBase_ac78aa7d57d8b86c33f18a0fec2ee77de}\label{classNodeAI_1_1ActionBase_ac78aa7d57d8b86c33f18a0fec2ee77de}} 
+\index{NodeAI.ActionBase@{NodeAI.ActionBase}!Eval@{Eval}}
+\index{Eval@{Eval}!NodeAI.ActionBase@{NodeAI.ActionBase}}
+\doxysubsubsection{\texorpdfstring{Eval()}{Eval()}}
+{\footnotesize\ttfamily override \mbox{\hyperlink{classNodeAI_1_1NodeData_ac6922af1bb0a7d7caf6dd2aa284506bb}{Node\+Data.\+State}} Node\+AI.\+Action\+Base.\+Eval (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNodeAI_1_1NodeAI__Agent}{Node\+AI\+\_\+\+Agent}}}]{agent,  }\item[{\mbox{\hyperlink{classNodeAI_1_1NodeTree_1_1Leaf}{Node\+Tree.\+Leaf}}}]{current }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Eval is called when the node is evaluated, and contains all of the logic for the node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em agent} & The \mbox{\hyperlink{classNodeAI_1_1NodeAI__Agent}{Node\+AI\+\_\+\+Agent}} that is currently running the node.\\
+\hline
+{\em current} & The current node which is being run.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current or updated state of the node.
+\end{DoxyReturn}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Possible return states }&\cellcolor{\tableheadbgcolor}\textbf{ When a node is evaluated it may return one of four states based on whether it is currently running, or if it has succeeded.  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Possible return states }&\cellcolor{\tableheadbgcolor}\textbf{ When a node is evaluated it may return one of four states based on whether it is currently running, or if it has succeeded.  }\\\cline{1-2}
+\endhead
+Running &The node is currently running and is still evaluating.  \\\cline{1-2}
+Success &The node has succeeded and has finished evaluating.  \\\cline{1-2}
+Failure &The node has failed and has finished evaluating.  \\\cline{1-2}
+Idle &The node is not currently running and is not evaluating.  \\\cline{1-2}
+\end{longtabu}
+
+
+Reimplemented from \mbox{\hyperlink{classNodeAI_1_1RuntimeBase_ae2ac77fe8ece6f4d127c64be3253c46d}{Node\+AI.\+Runtime\+Base}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Runtime/Runtime\+Base.\+cs\end{DoxyCompactItemize}

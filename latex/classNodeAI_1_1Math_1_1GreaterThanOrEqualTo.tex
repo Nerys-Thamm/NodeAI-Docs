@@ -1,0 +1,57 @@
+\hypertarget{classNodeAI_1_1Math_1_1GreaterThanOrEqualTo}{}\doxysection{Node\+AI.\+Math.\+Greater\+Than\+Or\+Equal\+To Class Reference}
+\label{classNodeAI_1_1Math_1_1GreaterThanOrEqualTo}\index{NodeAI.Math.GreaterThanOrEqualTo@{NodeAI.Math.GreaterThanOrEqualTo}}
+Inheritance diagram for Node\+AI.\+Math.\+Greater\+Than\+Or\+Equal\+To\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classNodeAI_1_1Math_1_1GreaterThanOrEqualTo}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{classNodeAI_1_1Math_1_1GreaterThanOrEqualTo_adb63beb97e963a1aace27209175a81f2}{Get\+New\+Values}} (\mbox{\hyperlink{classNodeAI_1_1NodeAI__Agent}{Node\+AI\+\_\+\+Agent}} agent)
+\begin{DoxyCompactList}\small\item\em This method is called when the \mbox{\hyperlink{classNodeAI_1_1Query}{Query}} is updated, and should be overriden to define custom behaviour. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNodeAI_1_1Math_1_1GreaterThanOrEqualTo_adb63beb97e963a1aace27209175a81f2}\label{classNodeAI_1_1Math_1_1GreaterThanOrEqualTo_adb63beb97e963a1aace27209175a81f2}} 
+\index{NodeAI.Math.GreaterThanOrEqualTo@{NodeAI.Math.GreaterThanOrEqualTo}!GetNewValues@{GetNewValues}}
+\index{GetNewValues@{GetNewValues}!NodeAI.Math.GreaterThanOrEqualTo@{NodeAI.Math.GreaterThanOrEqualTo}}
+\doxysubsubsection{\texorpdfstring{GetNewValues()}{GetNewValues()}}
+{\footnotesize\ttfamily override void Node\+AI.\+Math.\+Greater\+Than\+Or\+Equal\+To.\+Get\+New\+Values (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNodeAI_1_1NodeAI__Agent}{Node\+AI\+\_\+\+Agent}}}]{agent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This method is called when the \mbox{\hyperlink{classNodeAI_1_1Query}{Query}} is updated, and should be overriden to define custom behaviour. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em agent} & The agent processing the \mbox{\hyperlink{classNodeAI_1_1Query}{Query}}.\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public} \textcolor{keyword}{override} \textcolor{keywordtype}{void} \mbox{\hyperlink{classNodeAI_1_1Math_1_1GreaterThanOrEqualTo_adb63beb97e963a1aace27209175a81f2}{GetNewValues}}(NodeAI\_Agent agent)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{   \textcolor{comment}{// Get the value of the property called "{}MyInt"{}}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} myInt = GetProperty<int>(\textcolor{stringliteral}{"{}MyInt"{}});}
+\DoxyCodeLine{    \textcolor{comment}{// Set the value of the property called "{}MyInt"{} to the value of the property called "{}MyInt2"{}}}
+\DoxyCodeLine{   \mbox{\hyperlink{classNodeAI_1_1Query_a7499b40765d52cbb9b49abae249d38dc}{SetProperty}}(\textcolor{stringliteral}{"{}MyInt"{}}, GetProperty<int>(\textcolor{stringliteral}{"{}MyInt2"{}}));}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+~\newline
+ 
+
+Reimplemented from \mbox{\hyperlink{classNodeAI_1_1Query_ac4f3935fbb188e6372d9073cda1fd1b2}{Node\+AI.\+Query}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Runtime/Query.\+cs\end{DoxyCompactItemize}

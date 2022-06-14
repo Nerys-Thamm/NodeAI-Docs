@@ -1,0 +1,107 @@
+\hypertarget{classNodeAI_1_1QuerySearchWindow}{}\doxysection{Node\+AI.\+Query\+Search\+Window Class Reference}
+\label{classNodeAI_1_1QuerySearchWindow}\index{NodeAI.QuerySearchWindow@{NodeAI.QuerySearchWindow}}
+
+
+The search window for queries.  
+
+
+Inheritance diagram for Node\+AI.\+Query\+Search\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classNodeAI_1_1QuerySearchWindow}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classNodeAI_1_1QuerySearchWindow_a23e1ec6499e2273ad1743c746b09c98d}{Init}} (\mbox{\hyperlink{classNodeAI_1_1GraphView}{Graph\+View}} graph\+View)
+\begin{DoxyCompactList}\small\item\em This function is called when the search window is opened. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNodeAI_1_1QuerySearchWindow_a587dbb415aaf13f8b314b639f161323e}{Populate\+Search\+Tree\+Recursively}} (List$<$ Search\+Tree\+Entry $>$ search\+Tree, \mbox{\hyperlink{classNodeAI_1_1NamespaceParser_1_1NamespaceEntry}{Namespace\+Parser.\+Namespace\+Entry}} entry, int depth=0)
+\begin{DoxyCompactList}\small\item\em This method is used to recursively populate the search window. \end{DoxyCompactList}\item 
+List$<$ Search\+Tree\+Entry $>$ \mbox{\hyperlink{classNodeAI_1_1QuerySearchWindow_ae7c431da83b1abfda40f95cb35b5d4b7}{Create\+Search\+Tree}} (Search\+Window\+Context context)
+\begin{DoxyCompactList}\small\item\em This method is used to create a search window. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classNodeAI_1_1QuerySearchWindow_a891a9ce09538a6013ae629f04cad0d66}{On\+Select\+Entry}} (Search\+Tree\+Entry entry, Search\+Window\+Context context)
+\begin{DoxyCompactList}\small\item\em This method is called when an entry is selected in the search window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The search window for queries. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNodeAI_1_1QuerySearchWindow_ae7c431da83b1abfda40f95cb35b5d4b7}\label{classNodeAI_1_1QuerySearchWindow_ae7c431da83b1abfda40f95cb35b5d4b7}} 
+\index{NodeAI.QuerySearchWindow@{NodeAI.QuerySearchWindow}!CreateSearchTree@{CreateSearchTree}}
+\index{CreateSearchTree@{CreateSearchTree}!NodeAI.QuerySearchWindow@{NodeAI.QuerySearchWindow}}
+\doxysubsubsection{\texorpdfstring{CreateSearchTree()}{CreateSearchTree()}}
+{\footnotesize\ttfamily List$<$ Search\+Tree\+Entry $>$ Node\+AI.\+Query\+Search\+Window.\+Create\+Search\+Tree (\begin{DoxyParamCaption}\item[{Search\+Window\+Context}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This method is used to create a search window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNodeAI_1_1QuerySearchWindow_a23e1ec6499e2273ad1743c746b09c98d}\label{classNodeAI_1_1QuerySearchWindow_a23e1ec6499e2273ad1743c746b09c98d}} 
+\index{NodeAI.QuerySearchWindow@{NodeAI.QuerySearchWindow}!Init@{Init}}
+\index{Init@{Init}!NodeAI.QuerySearchWindow@{NodeAI.QuerySearchWindow}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Node\+AI.\+Query\+Search\+Window.\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNodeAI_1_1GraphView}{Graph\+View}}}]{graph\+View }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This function is called when the search window is opened. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph\+View} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classNodeAI_1_1QuerySearchWindow_a891a9ce09538a6013ae629f04cad0d66}\label{classNodeAI_1_1QuerySearchWindow_a891a9ce09538a6013ae629f04cad0d66}} 
+\index{NodeAI.QuerySearchWindow@{NodeAI.QuerySearchWindow}!OnSelectEntry@{OnSelectEntry}}
+\index{OnSelectEntry@{OnSelectEntry}!NodeAI.QuerySearchWindow@{NodeAI.QuerySearchWindow}}
+\doxysubsubsection{\texorpdfstring{OnSelectEntry()}{OnSelectEntry()}}
+{\footnotesize\ttfamily bool Node\+AI.\+Query\+Search\+Window.\+On\+Select\+Entry (\begin{DoxyParamCaption}\item[{Search\+Tree\+Entry}]{entry,  }\item[{Search\+Window\+Context}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This method is called when an entry is selected in the search window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & \\
+\hline
+{\em context} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNodeAI_1_1QuerySearchWindow_a587dbb415aaf13f8b314b639f161323e}\label{classNodeAI_1_1QuerySearchWindow_a587dbb415aaf13f8b314b639f161323e}} 
+\index{NodeAI.QuerySearchWindow@{NodeAI.QuerySearchWindow}!PopulateSearchTreeRecursively@{PopulateSearchTreeRecursively}}
+\index{PopulateSearchTreeRecursively@{PopulateSearchTreeRecursively}!NodeAI.QuerySearchWindow@{NodeAI.QuerySearchWindow}}
+\doxysubsubsection{\texorpdfstring{PopulateSearchTreeRecursively()}{PopulateSearchTreeRecursively()}}
+{\footnotesize\ttfamily void Node\+AI.\+Query\+Search\+Window.\+Populate\+Search\+Tree\+Recursively (\begin{DoxyParamCaption}\item[{List$<$ Search\+Tree\+Entry $>$}]{search\+Tree,  }\item[{\mbox{\hyperlink{classNodeAI_1_1NamespaceParser_1_1NamespaceEntry}{Namespace\+Parser.\+Namespace\+Entry}}}]{entry,  }\item[{int}]{depth = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This method is used to recursively populate the search window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em search\+Tree} & The Search\+Tree to populate.\\
+\hline
+{\em entry} & The Type to use as the Entry point.\\
+\hline
+{\em depth} & The current recursion depth.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Editor/Query\+Search\+Window.\+cs\end{DoxyCompactItemize}

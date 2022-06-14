@@ -1,0 +1,80 @@
+\hypertarget{classNodeAI_1_1NodeData_1_1Property}{}\doxysection{Node\+AI.\+Node\+Data.\+Property\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classNodeAI_1_1NodeData_1_1Property}\index{NodeAI.NodeData.Property$<$ T $>$@{NodeAI.NodeData.Property$<$ T $>$}}
+
+
+The property class is used to store and access data in a node both in code and in the editor.  
+
+
+Inheritance diagram for Node\+AI.\+Node\+Data.\+Property\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classNodeAI_1_1NodeData_1_1Property}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classNodeAI_1_1NodeData_1_1Property_aa32e297561297ece96b0e41e8bf34289}\label{classNodeAI_1_1NodeData_1_1Property_aa32e297561297ece96b0e41e8bf34289}} 
+{\bfseries Property} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the property class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNodeAI_1_1NodeData_1_1Property_aa50f033071b60f6fc7db941d7aaa729e}{Property}} (string \mbox{\hyperlink{classNodeAI_1_1NodeData_1_1Property_a469da9f3b05a5c56bac54f29b2c3001c}{name}}, object \mbox{\hyperlink{classNodeAI_1_1NodeData_1_1Property_aceb627cf38bc52f2465826223d3f451f}{value}}, System.\+Type \mbox{\hyperlink{classNodeAI_1_1NodeData_1_1Property_aa0e59f695591ffb445781a7123d9f2bd}{type}})
+\begin{DoxyCompactList}\small\item\em Constructor for the property class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classNodeAI_1_1NodeData_1_1Property_a469da9f3b05a5c56bac54f29b2c3001c}\label{classNodeAI_1_1NodeData_1_1Property_a469da9f3b05a5c56bac54f29b2c3001c}} 
+string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em The name of the property. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classNodeAI_1_1NodeData_1_1Property_a5f8376005374c80a381101b221bf4cb8}\label{classNodeAI_1_1NodeData_1_1Property_a5f8376005374c80a381101b221bf4cb8}} 
+string {\bfseries GUID}
+\begin{DoxyCompactList}\small\item\em The GUID of the property. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classNodeAI_1_1NodeData_1_1Property_a2ef829343258b8d56b69d746f779874f}\label{classNodeAI_1_1NodeData_1_1Property_a2ef829343258b8d56b69d746f779874f}} 
+string {\bfseries param\+Reference}
+\begin{DoxyCompactList}\small\item\em The GUID of the parameter that the property is referencing. If this is not null, the property is a reference to a parameter exposed in the inspector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classNodeAI_1_1NodeData_1_1Property_aa0e59f695591ffb445781a7123d9f2bd}\label{classNodeAI_1_1NodeData_1_1Property_aa0e59f695591ffb445781a7123d9f2bd}} 
+System.\+Type {\bfseries type}
+\begin{DoxyCompactList}\small\item\em The datatype of the property. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classNodeAI_1_1NodeData_1_1Property_aceb627cf38bc52f2465826223d3f451f}\label{classNodeAI_1_1NodeData_1_1Property_aceb627cf38bc52f2465826223d3f451f}} 
+object {\bfseries value}
+\begin{DoxyCompactList}\small\item\em The value of the property. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classNodeAI_1_1NodeData_1_1Property_a05b16ef7003af4f01f3103d7e8493633}\label{classNodeAI_1_1NodeData_1_1Property_a05b16ef7003af4f01f3103d7e8493633}} 
+bool {\bfseries output} = false
+\begin{DoxyCompactList}\small\item\em Whether the property is an output parameter or not. This is used to determine whether the property should be given an input port or an output port when shown in the graph editor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classNodeAI_1_1NodeData_1_1Property_a3143a94e0c4e36fc8191214635cbcf20}\label{classNodeAI_1_1NodeData_1_1Property_a3143a94e0c4e36fc8191214635cbcf20}} 
+T {\bfseries Value}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The property class is used to store and access data in a node both in code and in the editor. 
+
+A generic template version of the property class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNodeAI_1_1NodeData_1_1Property_aa50f033071b60f6fc7db941d7aaa729e}\label{classNodeAI_1_1NodeData_1_1Property_aa50f033071b60f6fc7db941d7aaa729e}} 
+\index{NodeAI.NodeData.Property$<$ T $>$@{NodeAI.NodeData.Property$<$ T $>$}!Property@{Property}}
+\index{Property@{Property}!NodeAI.NodeData.Property$<$ T $>$@{NodeAI.NodeData.Property$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Property()}{Property()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNodeAI_1_1NodeData_1_1Property}{Node\+AI.\+Node\+Data.\+Property}}$<$ T $>$.\mbox{\hyperlink{classNodeAI_1_1NodeData_1_1Property}{Property}} (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{object}]{value,  }\item[{System.\+Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the property class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property.\\
+\hline
+{\em value} & The initial value of the property.\\
+\hline
+{\em type} & The datatype of the property.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Runtime/Node\+Data.\+cs\end{DoxyCompactItemize}

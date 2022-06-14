@@ -1,0 +1,103 @@
+\hypertarget{classNodeAI_1_1CheckTagInRange}{}\doxysection{Node\+AI.\+Check\+Tag\+In\+Range Class Reference}
+\label{classNodeAI_1_1CheckTagInRange}\index{NodeAI.CheckTagInRange@{NodeAI.CheckTagInRange}}
+
+
+A \mbox{\hyperlink{classNodeAI_1_1Node}{Node}} that checks if a Game\+Object has a certain tag within a certain range.  
+
+
+Inheritance diagram for Node\+AI.\+Check\+Tag\+In\+Range\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classNodeAI_1_1CheckTagInRange}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override \mbox{\hyperlink{classNodeAI_1_1NodeData_ac6922af1bb0a7d7caf6dd2aa284506bb}{Node\+Data.\+State}} \mbox{\hyperlink{classNodeAI_1_1CheckTagInRange_a7a58eb82429eae13d1ac9bf008c48475}{Eval}} (\mbox{\hyperlink{classNodeAI_1_1NodeAI__Agent}{Node\+AI\+\_\+\+Agent}} agent, \mbox{\hyperlink{classNodeAI_1_1NodeTree_1_1Leaf}{Node\+Tree.\+Leaf}} current)
+\begin{DoxyCompactList}\small\item\em Eval is called when the node is evaluated, and contains all of the logic for the node. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{classNodeAI_1_1CheckTagInRange_a640c0101a01b3dd62bfd5472c280ce8f}{Draw\+Gizmos}} (\mbox{\hyperlink{classNodeAI_1_1NodeAI__Agent}{Node\+AI\+\_\+\+Agent}} agent)
+\begin{DoxyCompactList}\small\item\em Draw Gizmos is called when the Agent draws gizmos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classNodeAI_1_1Node}{Node}} that checks if a Game\+Object has a certain tag within a certain range. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNodeAI_1_1CheckTagInRange_a640c0101a01b3dd62bfd5472c280ce8f}\label{classNodeAI_1_1CheckTagInRange_a640c0101a01b3dd62bfd5472c280ce8f}} 
+\index{NodeAI.CheckTagInRange@{NodeAI.CheckTagInRange}!DrawGizmos@{DrawGizmos}}
+\index{DrawGizmos@{DrawGizmos}!NodeAI.CheckTagInRange@{NodeAI.CheckTagInRange}}
+\doxysubsubsection{\texorpdfstring{DrawGizmos()}{DrawGizmos()}}
+{\footnotesize\ttfamily override void Node\+AI.\+Check\+Tag\+In\+Range.\+Draw\+Gizmos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNodeAI_1_1NodeAI__Agent}{Node\+AI\+\_\+\+Agent}}}]{agent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Draw Gizmos is called when the Agent draws gizmos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em agent} & The Agent currently processing the node.\\
+\hline
+\end{DoxyParams}
+
+
+This method is only called when the node is currently running. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{override} \textcolor{keywordtype}{void} \mbox{\hyperlink{classNodeAI_1_1CheckTagInRange_a640c0101a01b3dd62bfd5472c280ce8f}{DrawGizmos}}(NodeAI\_Agent agent)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{   Gizmos.color = Color.red;}
+\DoxyCodeLine{   Gizmos.DrawSphere(agent.transform.position, 0.5f);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented from \mbox{\hyperlink{classNodeAI_1_1RuntimeBase_a9d9a5bc31cc601ed9a41465da6f3c0ee}{Node\+AI.\+Runtime\+Base}}.
+
+\mbox{\Hypertarget{classNodeAI_1_1CheckTagInRange_a7a58eb82429eae13d1ac9bf008c48475}\label{classNodeAI_1_1CheckTagInRange_a7a58eb82429eae13d1ac9bf008c48475}} 
+\index{NodeAI.CheckTagInRange@{NodeAI.CheckTagInRange}!Eval@{Eval}}
+\index{Eval@{Eval}!NodeAI.CheckTagInRange@{NodeAI.CheckTagInRange}}
+\doxysubsubsection{\texorpdfstring{Eval()}{Eval()}}
+{\footnotesize\ttfamily override \mbox{\hyperlink{classNodeAI_1_1NodeData_ac6922af1bb0a7d7caf6dd2aa284506bb}{Node\+Data.\+State}} Node\+AI.\+Check\+Tag\+In\+Range.\+Eval (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNodeAI_1_1NodeAI__Agent}{Node\+AI\+\_\+\+Agent}}}]{agent,  }\item[{\mbox{\hyperlink{classNodeAI_1_1NodeTree_1_1Leaf}{Node\+Tree.\+Leaf}}}]{current }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Eval is called when the node is evaluated, and contains all of the logic for the node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em agent} & The \mbox{\hyperlink{classNodeAI_1_1NodeAI__Agent}{Node\+AI\+\_\+\+Agent}} that is currently running the node.\\
+\hline
+{\em current} & The current node which is being run.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current or updated state of the node.
+\end{DoxyReturn}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Possible return states }&\cellcolor{\tableheadbgcolor}\textbf{ When a node is evaluated it may return one of four states based on whether it is currently running, or if it has succeeded.  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Possible return states }&\cellcolor{\tableheadbgcolor}\textbf{ When a node is evaluated it may return one of four states based on whether it is currently running, or if it has succeeded.  }\\\cline{1-2}
+\endhead
+Running &The node is currently running and is still evaluating.  \\\cline{1-2}
+Success &The node has succeeded and has finished evaluating.  \\\cline{1-2}
+Failure &The node has failed and has finished evaluating.  \\\cline{1-2}
+Idle &The node is not currently running and is not evaluating.  \\\cline{1-2}
+\end{longtabu}
+
+
+Reimplemented from \mbox{\hyperlink{classNodeAI_1_1RuntimeBase_ae2ac77fe8ece6f4d127c64be3253c46d}{Node\+AI.\+Runtime\+Base}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Runtime/\+Conditions/Check\+Tag\+In\+Range.\+cs\end{DoxyCompactItemize}

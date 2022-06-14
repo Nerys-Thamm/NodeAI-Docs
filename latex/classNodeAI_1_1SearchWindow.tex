@@ -1,0 +1,73 @@
+\hypertarget{classNodeAI_1_1SearchWindow}{}\doxysection{Node\+AI.\+Search\+Window Class Reference}
+\label{classNodeAI_1_1SearchWindow}\index{NodeAI.SearchWindow@{NodeAI.SearchWindow}}
+
+
+A search window provider for the \mbox{\hyperlink{namespaceNodeAI}{Node\+AI}} graph.  
+
+
+Inheritance diagram for Node\+AI.\+Search\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classNodeAI_1_1SearchWindow}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classNodeAI_1_1SearchWindow_a993fe5405339b0ee5ffae9fcf6d7431a}\label{classNodeAI_1_1SearchWindow_a993fe5405339b0ee5ffae9fcf6d7431a}} 
+void {\bfseries Init} (\mbox{\hyperlink{classNodeAI_1_1GraphView}{Graph\+View}} graph\+View)
+\begin{DoxyCompactList}\small\item\em Initializes the search window provider. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classNodeAI_1_1SearchWindow_a06b46133f185f3518a7a52346f0edafe}\label{classNodeAI_1_1SearchWindow_a06b46133f185f3518a7a52346f0edafe}} 
+void {\bfseries Set\+Selected\+Node} (\mbox{\hyperlink{classNodeAI_1_1Node}{Node}} node)
+\begin{DoxyCompactList}\small\item\em Sets the selected node. \end{DoxyCompactList}\item 
+List$<$ Search\+Tree\+Entry $>$ \mbox{\hyperlink{classNodeAI_1_1SearchWindow_a63b1c305db3bffc12d496d394897e7b9}{Create\+Search\+Tree}} (Search\+Window\+Context context)
+\begin{DoxyCompactList}\small\item\em Creates the search tree for the search window. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classNodeAI_1_1SearchWindow_a1ad2f38dda59161042f952b84f829259}{On\+Select\+Entry}} (Search\+Tree\+Entry entry, Search\+Window\+Context context)
+\begin{DoxyCompactList}\small\item\em Creates a new node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A search window provider for the \mbox{\hyperlink{namespaceNodeAI}{Node\+AI}} graph. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNodeAI_1_1SearchWindow_a63b1c305db3bffc12d496d394897e7b9}\label{classNodeAI_1_1SearchWindow_a63b1c305db3bffc12d496d394897e7b9}} 
+\index{NodeAI.SearchWindow@{NodeAI.SearchWindow}!CreateSearchTree@{CreateSearchTree}}
+\index{CreateSearchTree@{CreateSearchTree}!NodeAI.SearchWindow@{NodeAI.SearchWindow}}
+\doxysubsubsection{\texorpdfstring{CreateSearchTree()}{CreateSearchTree()}}
+{\footnotesize\ttfamily List$<$ Search\+Tree\+Entry $>$ Node\+AI.\+Search\+Window.\+Create\+Search\+Tree (\begin{DoxyParamCaption}\item[{Search\+Window\+Context}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates the search tree for the search window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & The search window context.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The search tree.
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNodeAI_1_1SearchWindow_a1ad2f38dda59161042f952b84f829259}\label{classNodeAI_1_1SearchWindow_a1ad2f38dda59161042f952b84f829259}} 
+\index{NodeAI.SearchWindow@{NodeAI.SearchWindow}!OnSelectEntry@{OnSelectEntry}}
+\index{OnSelectEntry@{OnSelectEntry}!NodeAI.SearchWindow@{NodeAI.SearchWindow}}
+\doxysubsubsection{\texorpdfstring{OnSelectEntry()}{OnSelectEntry()}}
+{\footnotesize\ttfamily bool Node\+AI.\+Search\+Window.\+On\+Select\+Entry (\begin{DoxyParamCaption}\item[{Search\+Tree\+Entry}]{entry,  }\item[{Search\+Window\+Context}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a new node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & The search window context.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean indicating if the node was created.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Editor/Search\+Window.\+cs\end{DoxyCompactItemize}

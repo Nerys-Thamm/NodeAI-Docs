@@ -1,0 +1,67 @@
+\hypertarget{classNodeAI_1_1Random_1_1RandomFloat}{}\doxysection{Node\+AI.\+Random.\+Random\+Float Class Reference}
+\label{classNodeAI_1_1Random_1_1RandomFloat}\index{NodeAI.Random.RandomFloat@{NodeAI.Random.RandomFloat}}
+
+
+A query that returns a random float.  
+
+
+Inheritance diagram for Node\+AI.\+Random.\+Random\+Float\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classNodeAI_1_1Random_1_1RandomFloat}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{classNodeAI_1_1Random_1_1RandomFloat_a31c500bfb152400a4ff23f4fd9e10ee2}{Get\+New\+Values}} (\mbox{\hyperlink{classNodeAI_1_1NodeAI__Agent}{Node\+AI\+\_\+\+Agent}} agent)
+\begin{DoxyCompactList}\small\item\em This method is called when the \mbox{\hyperlink{classNodeAI_1_1Query}{Query}} is updated, and should be overriden to define custom behaviour. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A query that returns a random float. 
+
+This query is useful for randomizing the behavior of a node. The result of this query is a random float between 0 and 1. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNodeAI_1_1Random_1_1RandomFloat_a31c500bfb152400a4ff23f4fd9e10ee2}\label{classNodeAI_1_1Random_1_1RandomFloat_a31c500bfb152400a4ff23f4fd9e10ee2}} 
+\index{NodeAI.Random.RandomFloat@{NodeAI.Random.RandomFloat}!GetNewValues@{GetNewValues}}
+\index{GetNewValues@{GetNewValues}!NodeAI.Random.RandomFloat@{NodeAI.Random.RandomFloat}}
+\doxysubsubsection{\texorpdfstring{GetNewValues()}{GetNewValues()}}
+{\footnotesize\ttfamily override void Node\+AI.\+Random.\+Random\+Float.\+Get\+New\+Values (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNodeAI_1_1NodeAI__Agent}{Node\+AI\+\_\+\+Agent}}}]{agent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This method is called when the \mbox{\hyperlink{classNodeAI_1_1Query}{Query}} is updated, and should be overriden to define custom behaviour. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em agent} & The agent processing the \mbox{\hyperlink{classNodeAI_1_1Query}{Query}}.\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public} \textcolor{keyword}{override} \textcolor{keywordtype}{void} \mbox{\hyperlink{classNodeAI_1_1Random_1_1RandomFloat_a31c500bfb152400a4ff23f4fd9e10ee2}{GetNewValues}}(NodeAI\_Agent agent)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{   \textcolor{comment}{// Get the value of the property called "{}MyInt"{}}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} myInt = GetProperty<int>(\textcolor{stringliteral}{"{}MyInt"{}});}
+\DoxyCodeLine{    \textcolor{comment}{// Set the value of the property called "{}MyInt"{} to the value of the property called "{}MyInt2"{}}}
+\DoxyCodeLine{   \mbox{\hyperlink{classNodeAI_1_1Query_a7499b40765d52cbb9b49abae249d38dc}{SetProperty}}(\textcolor{stringliteral}{"{}MyInt"{}}, GetProperty<int>(\textcolor{stringliteral}{"{}MyInt2"{}}));}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+~\newline
+ 
+
+Reimplemented from \mbox{\hyperlink{classNodeAI_1_1Query_ac4f3935fbb188e6372d9073cda1fd1b2}{Node\+AI.\+Query}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Runtime/\+Queries/Random\+Float.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,65 @@
+\hypertarget{classNodeAI_1_1FindWithTag}{}\doxysection{Node\+AI.\+Find\+With\+Tag Class Reference}
+\label{classNodeAI_1_1FindWithTag}\index{NodeAI.FindWithTag@{NodeAI.FindWithTag}}
+
+
+A query that returns an object with the specifies tag.  
+
+
+Inheritance diagram for Node\+AI.\+Find\+With\+Tag\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classNodeAI_1_1FindWithTag}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{classNodeAI_1_1FindWithTag_a29ae2bc4028c6109d8d57a04482a1410}{Get\+New\+Values}} (\mbox{\hyperlink{classNodeAI_1_1NodeAI__Agent}{Node\+AI\+\_\+\+Agent}} agent)
+\begin{DoxyCompactList}\small\item\em This method is called when the \mbox{\hyperlink{classNodeAI_1_1Query}{Query}} is updated, and should be overriden to define custom behaviour. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A query that returns an object with the specifies tag. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNodeAI_1_1FindWithTag_a29ae2bc4028c6109d8d57a04482a1410}\label{classNodeAI_1_1FindWithTag_a29ae2bc4028c6109d8d57a04482a1410}} 
+\index{NodeAI.FindWithTag@{NodeAI.FindWithTag}!GetNewValues@{GetNewValues}}
+\index{GetNewValues@{GetNewValues}!NodeAI.FindWithTag@{NodeAI.FindWithTag}}
+\doxysubsubsection{\texorpdfstring{GetNewValues()}{GetNewValues()}}
+{\footnotesize\ttfamily override void Node\+AI.\+Find\+With\+Tag.\+Get\+New\+Values (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNodeAI_1_1NodeAI__Agent}{Node\+AI\+\_\+\+Agent}}}]{agent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This method is called when the \mbox{\hyperlink{classNodeAI_1_1Query}{Query}} is updated, and should be overriden to define custom behaviour. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em agent} & The agent processing the \mbox{\hyperlink{classNodeAI_1_1Query}{Query}}.\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public} \textcolor{keyword}{override} \textcolor{keywordtype}{void} \mbox{\hyperlink{classNodeAI_1_1FindWithTag_a29ae2bc4028c6109d8d57a04482a1410}{GetNewValues}}(NodeAI\_Agent agent)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{   \textcolor{comment}{// Get the value of the property called "{}MyInt"{}}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} myInt = GetProperty<int>(\textcolor{stringliteral}{"{}MyInt"{}});}
+\DoxyCodeLine{    \textcolor{comment}{// Set the value of the property called "{}MyInt"{} to the value of the property called "{}MyInt2"{}}}
+\DoxyCodeLine{   \mbox{\hyperlink{classNodeAI_1_1Query_a7499b40765d52cbb9b49abae249d38dc}{SetProperty}}(\textcolor{stringliteral}{"{}MyInt"{}}, GetProperty<int>(\textcolor{stringliteral}{"{}MyInt2"{}}));}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+~\newline
+ 
+
+Reimplemented from \mbox{\hyperlink{classNodeAI_1_1Query_ac4f3935fbb188e6372d9073cda1fd1b2}{Node\+AI.\+Query}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Runtime/\+Queries/Find\+With\+Tag.\+cs\end{DoxyCompactItemize}

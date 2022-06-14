@@ -1,0 +1,338 @@
+\hypertarget{classNodeAI_1_1Query}{}\doxysection{Node\+AI.\+Query Class Reference}
+\label{classNodeAI_1_1Query}\index{NodeAI.Query@{NodeAI.Query}}
+
+
+Base class for all query nodes.  
+
+
+Inheritance diagram for Node\+AI.\+Query\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classNodeAI_1_1Query}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classNodeAI_1_1Query_a8dc7a412b6a7199ebb1faa03fd5c6fbe}\label{classNodeAI_1_1Query_a8dc7a412b6a7199ebb1faa03fd5c6fbe}} 
+void {\bfseries On\+Enable} ()
+\begin{DoxyCompactList}\small\item\em Executes when object is enabled \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNodeAI_1_1Query_a29213ec2680107ec72da307f4b6dd5fb}{Repopulate\+Properties}} (List$<$ \mbox{\hyperlink{classNodeAI_1_1NodeData_1_1SerializableProperty}{Node\+Data.\+Serializable\+Property}} $>$ properties)
+\begin{DoxyCompactList}\small\item\em Repopulates the properties list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNodeAI_1_1Query_adf19169481bb301d8c741a493b4cbf97}{Add\+Property$<$ T $>$}} (string name, T initial\+Value, bool is\+Output)
+\begin{DoxyCompactList}\small\item\em Adds a property to the \mbox{\hyperlink{classNodeAI_1_1Query}{Query}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNodeAI_1_1Query_a92bda15ad222837b4e027eed4af692b0}{Set\+Property$<$ T $>$}} (string name, T value)
+\begin{DoxyCompactList}\small\item\em Sets the value of a property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNodeAI_1_1Query_a7499b40765d52cbb9b49abae249d38dc}{Set\+Property}} (string name, Object value, System.\+Type type)
+\begin{DoxyCompactList}\small\item\em Sets the value of a property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNodeAI_1_1Query_acd169c1979982b9260960bd9498f24be}{Set\+Property\+GUID}} (string name, string GUID)
+\begin{DoxyCompactList}\small\item\em Sets the GUID of a property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNodeAI_1_1Query_a638a24d7ac723f74d117822905fcbda6}{Set\+Property\+Param\+Reference}} (string name, string param\+Reference)
+\begin{DoxyCompactList}\small\item\em Sets the Parameter reference of a property. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classNodeAI_1_1Query_a252874e6df65d819a2bb741c49feceac}{Get\+Property$<$ T $>$}} (string name)
+\begin{DoxyCompactList}\small\item\em Gets the value of a property. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classNodeAI_1_1NodeData_1_1Property}{Node\+Data.\+Property}} $>$ \mbox{\hyperlink{classNodeAI_1_1Query_a6e9e845d848297e7f89ec6e8a938cefb}{Get\+Properties}} ()
+\begin{DoxyCompactList}\small\item\em Gets all the properties of a node. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classNodeAI_1_1NodeData_1_1SerializableProperty}{Node\+Data.\+Serializable\+Property}} $>$ \mbox{\hyperlink{classNodeAI_1_1Query_aaace1f4bb039a7e71d1b2c8525ac0064}{Get\+Serializable\+Properties}} ()
+\begin{DoxyCompactList}\small\item\em Gets all properties of a node as serializable properties. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{classNodeAI_1_1NodeData_1_1SerializableProperty}{Node\+Data.\+Serializable\+Property}} $>$ \mbox{\hyperlink{classNodeAI_1_1Query_a7bb3cf4692a9d7600080d755ab49019a}{Get\+Properties\+Where\+Param\+Reference}} (string param\+Reference)
+\begin{DoxyCompactList}\small\item\em Gets all the properties of a node as serializable properties, where the parameter reference of the property is equal to the provided parameter reference. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classNodeAI_1_1Query_ac4f3935fbb188e6372d9073cda1fd1b2}{Get\+New\+Values}} (\mbox{\hyperlink{classNodeAI_1_1NodeAI__Agent}{Node\+AI\+\_\+\+Agent}} agent)
+\begin{DoxyCompactList}\small\item\em This method is called when the \mbox{\hyperlink{classNodeAI_1_1Query}{Query}} is updated, and should be overriden to define custom behaviour. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classNodeAI_1_1Query_a0f8e25a0b6a4a5bcb2796deb85bc5f4d}\label{classNodeAI_1_1Query_a0f8e25a0b6a4a5bcb2796deb85bc5f4d}} 
+string {\bfseries tooltip} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em The tooltip that is displayed when the mouse is over the node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all query nodes. 
+
+A query node is a node which executes some form of logic at runtime which is not directly part of the Agent\textquotesingle{}s behaviour. \mbox{\hyperlink{classNodeAI_1_1Query}{Query}} nodes can have any number of input and output properties, and can be used to either process said inputs in some way and return the result as an output, collect information from the scene, or both. 
+
+The following snippet shows how to create a query node that takes a Color property and returns its intensity as an output\+: 
+
+~\newline
+ 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public} \textcolor{keyword}{class }ColorIntensity : Query}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{   \textcolor{keyword}{public} ColorIntensity()}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{      AddProperty<Color>(\textcolor{stringliteral}{"{}Color"{}}, Color.white, \textcolor{keyword}{false});}
+\DoxyCodeLine{      AddProperty<float>(\textcolor{stringliteral}{"{}Intensity"{}}, 0f, \textcolor{keyword}{true}); }
+\DoxyCodeLine{   \}}
+\DoxyCodeLine{   \textcolor{keyword}{public} \textcolor{keyword}{override} \textcolor{keywordtype}{void} \mbox{\hyperlink{classNodeAI_1_1Query_ac4f3935fbb188e6372d9073cda1fd1b2}{GetNewValues}}(NodeAI\_Agent agent)}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{     \textcolor{keywordtype}{float} r = GetProperty<Color>(\textcolor{stringliteral}{"{}Color"{}}).r;}
+\DoxyCodeLine{     \textcolor{keywordtype}{float} g = GetProperty<Color>(\textcolor{stringliteral}{"{}Color"{}}).g;}
+\DoxyCodeLine{     \textcolor{keywordtype}{float} b = GetProperty<Color>(\textcolor{stringliteral}{"{}Color"{}}).b;}
+\DoxyCodeLine{     \textcolor{keywordtype}{float} intensity = (0.21f × r) + (0.72f × g) + (0.07f × b);}
+\DoxyCodeLine{     SetProperty<float>(\textcolor{stringliteral}{"{}Intensity"{}}, intensity);}
+\DoxyCodeLine{   \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNodeAI_1_1Query_adf19169481bb301d8c741a493b4cbf97}\label{classNodeAI_1_1Query_adf19169481bb301d8c741a493b4cbf97}} 
+\index{NodeAI.Query@{NodeAI.Query}!AddProperty$<$ T $>$@{AddProperty$<$ T $>$}}
+\index{AddProperty$<$ T $>$@{AddProperty$<$ T $>$}!NodeAI.Query@{NodeAI.Query}}
+\doxysubsubsection{\texorpdfstring{AddProperty$<$ T $>$()}{AddProperty< T >()}}
+{\footnotesize\ttfamily void Node\+AI.\+Query.\+Add\+Property$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{T}]{initial\+Value,  }\item[{bool}]{is\+Output }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a property to the \mbox{\hyperlink{classNodeAI_1_1Query}{Query}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to add.\\
+\hline
+{\em initial\+Value} & The initial value of the property.\\
+\hline
+{\em is\+Output} & Whether this property is an output or not.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The datatype of this property\\
+\hline
+\end{DoxyTemplParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{AddProperty<int>(\textcolor{stringliteral}{"{}MyInt"{}}, 0, \textcolor{keyword}{false}); \textcolor{comment}{// Adds a property called "{}MyInt"{} with a value of 0 which is an input}}
+\DoxyCodeLine{AddProperty<bool>(\textcolor{stringliteral}{"{}MyBool"{}}, \textcolor{keyword}{false}, \textcolor{keyword}{true}); \textcolor{comment}{// Adds a property called "{}MyBool"{} with a value of false which is an output}}
+\DoxyCodeLine{\textcolor{comment}{//Whether a property is an input or an output determines whether it recieves an input port or an output port on the Node.}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{classNodeAI_1_1Query_ac4f3935fbb188e6372d9073cda1fd1b2}\label{classNodeAI_1_1Query_ac4f3935fbb188e6372d9073cda1fd1b2}} 
+\index{NodeAI.Query@{NodeAI.Query}!GetNewValues@{GetNewValues}}
+\index{GetNewValues@{GetNewValues}!NodeAI.Query@{NodeAI.Query}}
+\doxysubsubsection{\texorpdfstring{GetNewValues()}{GetNewValues()}}
+{\footnotesize\ttfamily virtual void Node\+AI.\+Query.\+Get\+New\+Values (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNodeAI_1_1NodeAI__Agent}{Node\+AI\+\_\+\+Agent}}}]{agent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This method is called when the \mbox{\hyperlink{classNodeAI_1_1Query}{Query}} is updated, and should be overriden to define custom behaviour. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em agent} & The agent processing the \mbox{\hyperlink{classNodeAI_1_1Query}{Query}}.\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public} \textcolor{keyword}{override} \textcolor{keywordtype}{void} \mbox{\hyperlink{classNodeAI_1_1Query_ac4f3935fbb188e6372d9073cda1fd1b2}{GetNewValues}}(NodeAI\_Agent agent)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{   \textcolor{comment}{// Get the value of the property called "{}MyInt"{}}}
+\DoxyCodeLine{    \textcolor{keywordtype}{int} myInt = GetProperty<int>(\textcolor{stringliteral}{"{}MyInt"{}});}
+\DoxyCodeLine{    \textcolor{comment}{// Set the value of the property called "{}MyInt"{} to the value of the property called "{}MyInt2"{}}}
+\DoxyCodeLine{   \mbox{\hyperlink{classNodeAI_1_1Query_a7499b40765d52cbb9b49abae249d38dc}{SetProperty}}(\textcolor{stringliteral}{"{}MyInt"{}}, GetProperty<int>(\textcolor{stringliteral}{"{}MyInt2"{}}));}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+~\newline
+ 
+
+Reimplemented in \mbox{\hyperlink{classNodeAI_1_1Utility_1_1DistanceFromAgent_a8f943758a9f280ef58e4648d432e65dc}{Node\+AI.\+Utility.\+Distance\+From\+Agent}}, \mbox{\hyperlink{classNodeAI_1_1Senses_1_1FindTagInKnownObjects_ac69884ff59d2faa314cb6a86c56a63e8}{Node\+AI.\+Senses.\+Find\+Tag\+In\+Known\+Objects}}, \mbox{\hyperlink{classNodeAI_1_1FindWithTag_a29ae2bc4028c6109d8d57a04482a1410}{Node\+AI.\+Find\+With\+Tag}}, \mbox{\hyperlink{classNodeAI_1_1Random_1_1RandomBool_a1bcf0aaeff10340a2edfeebbc74198c9}{Node\+AI.\+Random.\+Random\+Bool}}, \mbox{\hyperlink{classNodeAI_1_1Random_1_1RandomFloat_a31c500bfb152400a4ff23f4fd9e10ee2}{Node\+AI.\+Random.\+Random\+Float}}, \mbox{\hyperlink{classNodeAI_1_1Math_1_1Add_a124de3ef7550706e1fda59075a27f815}{Node\+AI.\+Math.\+Add}}, \mbox{\hyperlink{classNodeAI_1_1Math_1_1Subtract_ab8341bf3388ca0fd44af3770f8c99551}{Node\+AI.\+Math.\+Subtract}}, \mbox{\hyperlink{classNodeAI_1_1Math_1_1Multiply_a2bc5641eba67ab20411b2da441a990ff}{Node\+AI.\+Math.\+Multiply}}, \mbox{\hyperlink{classNodeAI_1_1Math_1_1Divide_a50941a6b12d7a9d5f7f56ed948d128df}{Node\+AI.\+Math.\+Divide}}, \mbox{\hyperlink{classNodeAI_1_1Math_1_1GreaterThan_a34abcb2420dbc210bbaa8fe769cfa719}{Node\+AI.\+Math.\+Greater\+Than}}, \mbox{\hyperlink{classNodeAI_1_1Math_1_1LessThan_adb133451839c1f1fa69d3af97d82a7df}{Node\+AI.\+Math.\+Less\+Than}}, \mbox{\hyperlink{classNodeAI_1_1Math_1_1EqualTo_a2ec3861295b2ede8e061baf3996730dd}{Node\+AI.\+Math.\+Equal\+To}}, \mbox{\hyperlink{classNodeAI_1_1Math_1_1NotEqualTo_ab87c37b0d427dc19701e907304533f7f}{Node\+AI.\+Math.\+Not\+Equal\+To}}, \mbox{\hyperlink{classNodeAI_1_1Math_1_1GreaterThanOrEqualTo_adb63beb97e963a1aace27209175a81f2}{Node\+AI.\+Math.\+Greater\+Than\+Or\+Equal\+To}}, \mbox{\hyperlink{classNodeAI_1_1Logic_1_1And_a1b7b29e4e96a3f0484a2b739366d83b1}{Node\+AI.\+Logic.\+And}}, \mbox{\hyperlink{classNodeAI_1_1Logic_1_1Or_a84ca8286a6027a96121dcf0f006b521b}{Node\+AI.\+Logic.\+Or}}, \mbox{\hyperlink{classNodeAI_1_1Logic_1_1Not_a85e18f5992fc8de41e721290e8ebf4dc}{Node\+AI.\+Logic.\+Not}}, \mbox{\hyperlink{classNodeAI_1_1Logic_1_1Xor_a9a72336eccacbf054e5363ecf267bd4a}{Node\+AI.\+Logic.\+Xor}}, \mbox{\hyperlink{classNodeAI_1_1Logic_1_1Nand_ab4d8e15352d75c15c0aa772614b4d16b}{Node\+AI.\+Logic.\+Nand}}, \mbox{\hyperlink{classNodeAI_1_1Logic_1_1Nor_a247f37687a30738a50ed4be4e48b9115}{Node\+AI.\+Logic.\+Nor}}, \mbox{\hyperlink{classNodeAI_1_1Logic_1_1Xnor_a14dc64aebd23fbda8f222f36a53fe946}{Node\+AI.\+Logic.\+Xnor}}, and \mbox{\hyperlink{classNodeAI_1_1Utility_1_1GetObjectTransform_a472ac04b702023b807ca89b45991acd6}{Node\+AI.\+Utility.\+Get\+Object\+Transform}}.
+
+\mbox{\Hypertarget{classNodeAI_1_1Query_a6e9e845d848297e7f89ec6e8a938cefb}\label{classNodeAI_1_1Query_a6e9e845d848297e7f89ec6e8a938cefb}} 
+\index{NodeAI.Query@{NodeAI.Query}!GetProperties@{GetProperties}}
+\index{GetProperties@{GetProperties}!NodeAI.Query@{NodeAI.Query}}
+\doxysubsubsection{\texorpdfstring{GetProperties()}{GetProperties()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classNodeAI_1_1NodeData_1_1Property}{Node\+Data.\+Property}} $>$ Node\+AI.\+Query.\+Get\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets all the properties of a node. 
+
+\begin{DoxyReturn}{Returns}
+A list of all properties.
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNodeAI_1_1Query_a7bb3cf4692a9d7600080d755ab49019a}\label{classNodeAI_1_1Query_a7bb3cf4692a9d7600080d755ab49019a}} 
+\index{NodeAI.Query@{NodeAI.Query}!GetPropertiesWhereParamReference@{GetPropertiesWhereParamReference}}
+\index{GetPropertiesWhereParamReference@{GetPropertiesWhereParamReference}!NodeAI.Query@{NodeAI.Query}}
+\doxysubsubsection{\texorpdfstring{GetPropertiesWhereParamReference()}{GetPropertiesWhereParamReference()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classNodeAI_1_1NodeData_1_1SerializableProperty}{Node\+Data.\+Serializable\+Property}} $>$ Node\+AI.\+Query.\+Get\+Properties\+Where\+Param\+Reference (\begin{DoxyParamCaption}\item[{string}]{param\+Reference }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets all the properties of a node as serializable properties, where the parameter reference of the property is equal to the provided parameter reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param\+Reference} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNodeAI_1_1Query_a252874e6df65d819a2bb741c49feceac}\label{classNodeAI_1_1Query_a252874e6df65d819a2bb741c49feceac}} 
+\index{NodeAI.Query@{NodeAI.Query}!GetProperty$<$ T $>$@{GetProperty$<$ T $>$}}
+\index{GetProperty$<$ T $>$@{GetProperty$<$ T $>$}!NodeAI.Query@{NodeAI.Query}}
+\doxysubsubsection{\texorpdfstring{GetProperty$<$ T $>$()}{GetProperty< T >()}}
+{\footnotesize\ttfamily T Node\+AI.\+Query.\+Get\+Property$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the value of a property. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The datatype of the property.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The value of the property
+\end{DoxyReturn}
+
+
+If the property does not exist, the method will return the default value of the property\textquotesingle{}s datatype.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} myInt = GetProperty<int>(\textcolor{stringliteral}{"{}MyInt"{}}); \textcolor{comment}{// Gets the value of the property called "{}MyInt"{}}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{classNodeAI_1_1Query_aaace1f4bb039a7e71d1b2c8525ac0064}\label{classNodeAI_1_1Query_aaace1f4bb039a7e71d1b2c8525ac0064}} 
+\index{NodeAI.Query@{NodeAI.Query}!GetSerializableProperties@{GetSerializableProperties}}
+\index{GetSerializableProperties@{GetSerializableProperties}!NodeAI.Query@{NodeAI.Query}}
+\doxysubsubsection{\texorpdfstring{GetSerializableProperties()}{GetSerializableProperties()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classNodeAI_1_1NodeData_1_1SerializableProperty}{Node\+Data.\+Serializable\+Property}} $>$ Node\+AI.\+Query.\+Get\+Serializable\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets all properties of a node as serializable properties. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classNodeAI_1_1Query_a29213ec2680107ec72da307f4b6dd5fb}\label{classNodeAI_1_1Query_a29213ec2680107ec72da307f4b6dd5fb}} 
+\index{NodeAI.Query@{NodeAI.Query}!RepopulateProperties@{RepopulateProperties}}
+\index{RepopulateProperties@{RepopulateProperties}!NodeAI.Query@{NodeAI.Query}}
+\doxysubsubsection{\texorpdfstring{RepopulateProperties()}{RepopulateProperties()}}
+{\footnotesize\ttfamily void Node\+AI.\+Query.\+Repopulate\+Properties (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classNodeAI_1_1NodeData_1_1SerializableProperty}{Node\+Data.\+Serializable\+Property}} $>$}]{properties }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Repopulates the properties list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em properties} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classNodeAI_1_1Query_a7499b40765d52cbb9b49abae249d38dc}\label{classNodeAI_1_1Query_a7499b40765d52cbb9b49abae249d38dc}} 
+\index{NodeAI.Query@{NodeAI.Query}!SetProperty@{SetProperty}}
+\index{SetProperty@{SetProperty}!NodeAI.Query@{NodeAI.Query}}
+\doxysubsubsection{\texorpdfstring{SetProperty()}{SetProperty()}}
+{\footnotesize\ttfamily void Node\+AI.\+Query.\+Set\+Property (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{Object}]{value,  }\item[{System.\+Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the value of a property. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to set.\\
+\hline
+{\em value} & The value to set the property to.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The datatype of the property.\\
+\hline
+\end{DoxyTemplParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classNodeAI_1_1Query_a7499b40765d52cbb9b49abae249d38dc}{SetProperty}}(\textcolor{stringliteral}{"{}MyInt"{}}, (Object)5, typeof(\textcolor{keywordtype}{int})); \textcolor{comment}{// Sets the value of the property called "{}MyInt"{} to 5}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{classNodeAI_1_1Query_a92bda15ad222837b4e027eed4af692b0}\label{classNodeAI_1_1Query_a92bda15ad222837b4e027eed4af692b0}} 
+\index{NodeAI.Query@{NodeAI.Query}!SetProperty$<$ T $>$@{SetProperty$<$ T $>$}}
+\index{SetProperty$<$ T $>$@{SetProperty$<$ T $>$}!NodeAI.Query@{NodeAI.Query}}
+\doxysubsubsection{\texorpdfstring{SetProperty$<$ T $>$()}{SetProperty< T >()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{classNodeAI_1_1Query_a7499b40765d52cbb9b49abae249d38dc}{Node\+AI.\+Query.\+Set\+Property}}$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{T}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the value of a property. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property to set.\\
+\hline
+{\em value} & The value to set the property to.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The datatype of the property.\\
+\hline
+\end{DoxyTemplParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{SetProperty<int>(\textcolor{stringliteral}{"{}MyInt"{}}, 5); \textcolor{comment}{// Sets the value of the property called "{}MyInt"{} to 5}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{classNodeAI_1_1Query_acd169c1979982b9260960bd9498f24be}\label{classNodeAI_1_1Query_acd169c1979982b9260960bd9498f24be}} 
+\index{NodeAI.Query@{NodeAI.Query}!SetPropertyGUID@{SetPropertyGUID}}
+\index{SetPropertyGUID@{SetPropertyGUID}!NodeAI.Query@{NodeAI.Query}}
+\doxysubsubsection{\texorpdfstring{SetPropertyGUID()}{SetPropertyGUID()}}
+{\footnotesize\ttfamily void Node\+AI.\+Query.\+Set\+Property\+GUID (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{string}]{GUID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the GUID of a property. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property.\\
+\hline
+{\em GUID} & The GUID to set.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classNodeAI_1_1Query_a638a24d7ac723f74d117822905fcbda6}\label{classNodeAI_1_1Query_a638a24d7ac723f74d117822905fcbda6}} 
+\index{NodeAI.Query@{NodeAI.Query}!SetPropertyParamReference@{SetPropertyParamReference}}
+\index{SetPropertyParamReference@{SetPropertyParamReference}!NodeAI.Query@{NodeAI.Query}}
+\doxysubsubsection{\texorpdfstring{SetPropertyParamReference()}{SetPropertyParamReference()}}
+{\footnotesize\ttfamily void Node\+AI.\+Query.\+Set\+Property\+Param\+Reference (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{string}]{param\+Reference }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the Parameter reference of a property. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the property.\\
+\hline
+{\em param\+Reference} & The GUID of the parameter.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Runtime/Query.\+cs\end{DoxyCompactItemize}

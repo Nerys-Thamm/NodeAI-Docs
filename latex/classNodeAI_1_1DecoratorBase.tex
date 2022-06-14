@@ -1,0 +1,111 @@
+\hypertarget{classNodeAI_1_1DecoratorBase}{}\doxysection{Node\+AI.\+Decorator\+Base Class Reference}
+\label{classNodeAI_1_1DecoratorBase}\index{NodeAI.DecoratorBase@{NodeAI.DecoratorBase}}
+
+
+The base class for Decorator Nodes.  
+
+
+Inheritance diagram for Node\+AI.\+Decorator\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.109228cm]{classNodeAI_1_1DecoratorBase}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classNodeAI_1_1DecoratorBase_a9186b92e760ba5f847ee18afcc7e0255}\label{classNodeAI_1_1DecoratorBase_a9186b92e760ba5f847ee18afcc7e0255}} 
+virtual \mbox{\hyperlink{classNodeAI_1_1NodeData_ac6922af1bb0a7d7caf6dd2aa284506bb}{Node\+Data.\+State}} {\bfseries Apply\+Decorator} (\mbox{\hyperlink{classNodeAI_1_1NodeAI__Agent}{Node\+AI\+\_\+\+Agent}} agent, \mbox{\hyperlink{classNodeAI_1_1NodeTree_1_1Leaf}{Node\+Tree.\+Leaf}} child)
+\item 
+override \mbox{\hyperlink{classNodeAI_1_1NodeData_ac6922af1bb0a7d7caf6dd2aa284506bb}{Node\+Data.\+State}} \mbox{\hyperlink{classNodeAI_1_1DecoratorBase_a8b43a9211547409460192402002c086d}{Eval}} (\mbox{\hyperlink{classNodeAI_1_1NodeAI__Agent}{Node\+AI\+\_\+\+Agent}} agent, \mbox{\hyperlink{classNodeAI_1_1NodeTree_1_1Leaf}{Node\+Tree.\+Leaf}} current)
+\begin{DoxyCompactList}\small\item\em Eval is called when the node is evaluated, and contains all of the logic for the node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The base class for Decorator Nodes. 
+
+Decorator Nodes may have one single child node, and they work by modifying the return of the child node, or otherwise changing how it runs. An example of a decorator node is the \mbox{\hyperlink{classNodeAI_1_1Inverter}{Inverter}} node, which inverts the return of the child node. If the child of the inverter node returns success, the inverter node will fail, and vice versa. Another example of a decorator node is the \mbox{\hyperlink{classNodeAI_1_1Repeater}{Repeater}} node, which repeats the child node multiple times. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public} \textcolor{keyword}{class }MyDecoratorNode : DecoratorNode}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{   \textcolor{keyword}{public} MyDecoratorNode() \textcolor{comment}{// Constructor}}
+\DoxyCodeLine{   \{   <br>}
+\DoxyCodeLine{     \mbox{\hyperlink{classNodeAI_1_1RuntimeBase_a5fb268786ab921708445622258467afc}{tooltip}} = \textcolor{stringliteral}{"{}An Example Decorator Node"{}};}
+\DoxyCodeLine{     AddProperty<float>(\textcolor{stringliteral}{"{}MyProperty"{}}, \textcolor{stringliteral}{"{}My Property"{}}, 0.0f);}
+\DoxyCodeLine{   \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keyword}{public} \textcolor{keyword}{override} NodeData.State ApplyDecorator(NodeAI\_Agent agent, NodeTree.Leaf child) \textcolor{comment}{// Override the ApplyDecorator method}}
+\DoxyCodeLine{   \{}
+\DoxyCodeLine{      \textcolor{keywordflow}{switch}(child.nodeData.runtimeLogic.state) \textcolor{comment}{// Check the state of the child node}}
+\DoxyCodeLine{      \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{case} NodeData.State.Success: \textcolor{comment}{// If the child node succeeded}}
+\DoxyCodeLine{            \mbox{\hyperlink{classNodeAI_1_1RuntimeBase_a7c14c35b8b17324d8c7b8ae7511662eb}{state}} = NodeData.\mbox{\hyperlink{classNodeAI_1_1NodeData_ac6922af1bb0a7d7caf6dd2aa284506bb}{State}}.Failure;}
+\DoxyCodeLine{            \textcolor{keywordflow}{return} NodeData.State.Failure;}
+\DoxyCodeLine{        \textcolor{keywordflow}{case} NodeData.State.Failure: \textcolor{comment}{// If the child node failed}}
+\DoxyCodeLine{            \mbox{\hyperlink{classNodeAI_1_1RuntimeBase_a7c14c35b8b17324d8c7b8ae7511662eb}{state}} = NodeData.\mbox{\hyperlink{classNodeAI_1_1NodeData_ac6922af1bb0a7d7caf6dd2aa284506bb}{State}}.Success;}
+\DoxyCodeLine{            \textcolor{keywordflow}{return} NodeData.State.Success;}
+\DoxyCodeLine{        \textcolor{keywordflow}{default}: \textcolor{comment}{// The child node is still running}}
+\DoxyCodeLine{            \mbox{\hyperlink{classNodeAI_1_1RuntimeBase_a7c14c35b8b17324d8c7b8ae7511662eb}{state}} = NodeData.\mbox{\hyperlink{classNodeAI_1_1NodeData_ac6922af1bb0a7d7caf6dd2aa284506bb}{State}}.Running;}
+\DoxyCodeLine{            \textcolor{keywordflow}{return} NodeData.State.Running;}
+\DoxyCodeLine{     \}}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+~\newline
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNodeAI_1_1DecoratorBase_a8b43a9211547409460192402002c086d}\label{classNodeAI_1_1DecoratorBase_a8b43a9211547409460192402002c086d}} 
+\index{NodeAI.DecoratorBase@{NodeAI.DecoratorBase}!Eval@{Eval}}
+\index{Eval@{Eval}!NodeAI.DecoratorBase@{NodeAI.DecoratorBase}}
+\doxysubsubsection{\texorpdfstring{Eval()}{Eval()}}
+{\footnotesize\ttfamily override \mbox{\hyperlink{classNodeAI_1_1NodeData_ac6922af1bb0a7d7caf6dd2aa284506bb}{Node\+Data.\+State}} Node\+AI.\+Decorator\+Base.\+Eval (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNodeAI_1_1NodeAI__Agent}{Node\+AI\+\_\+\+Agent}}}]{agent,  }\item[{\mbox{\hyperlink{classNodeAI_1_1NodeTree_1_1Leaf}{Node\+Tree.\+Leaf}}}]{current }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Eval is called when the node is evaluated, and contains all of the logic for the node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em agent} & The \mbox{\hyperlink{classNodeAI_1_1NodeAI__Agent}{Node\+AI\+\_\+\+Agent}} that is currently running the node.\\
+\hline
+{\em current} & The current node which is being run.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current or updated state of the node.
+\end{DoxyReturn}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Possible return states }&\cellcolor{\tableheadbgcolor}\textbf{ When a node is evaluated it may return one of four states based on whether it is currently running, or if it has succeeded.  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Possible return states }&\cellcolor{\tableheadbgcolor}\textbf{ When a node is evaluated it may return one of four states based on whether it is currently running, or if it has succeeded.  }\\\cline{1-2}
+\endhead
+Running &The node is currently running and is still evaluating.  \\\cline{1-2}
+Success &The node has succeeded and has finished evaluating.  \\\cline{1-2}
+Failure &The node has failed and has finished evaluating.  \\\cline{1-2}
+Idle &The node is not currently running and is not evaluating.  \\\cline{1-2}
+\end{longtabu}
+
+
+Reimplemented from \mbox{\hyperlink{classNodeAI_1_1RuntimeBase_ae2ac77fe8ece6f4d127c64be3253c46d}{Node\+AI.\+Runtime\+Base}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classNodeAI_1_1Chance_a2aaf3cce46e9a52515be727f4e9ffcd4}{Node\+AI.\+Chance}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Runtime/Runtime\+Base.\+cs\end{DoxyCompactItemize}
