@@ -167,6 +167,15 @@ NodeAI Senses</h2>
 <p >In the inspector, you should assign the Eyes Bone property as the transform of whatever part of your model best represents their head or eyes. This is what the senses module will use to determine what they can see. You can also edit the sight distance and angle to fine tune your Agent's cone of vision. The sight mask option allows you to choose which object layers your Agent can see, which can be useful when you want to make certain things invisible to them.</p>
 <p ><img src="https://cdn.discordapp.com/attachments/686335357406412949/986220639188832336/unknown.png" alt="screenshot" class="inline"/></p>
 <h2><a class="anchor" id="autotoc_md13"></a>
+Debugging at Runtime</h2>
+<p >Sometimes, it can be frustrating when something just isnt working and you dont know why. We understand, we really do, and thats why <a class="el" href="namespaceNodeAI.html">NodeAI</a> lets you see your Behaviours running in real time! Simply select an Agent with the same behaviour you currently have open in the Graph Editor, while the game is running, and watch the Editor switch to Debug mode. In Debug mode, you can see coloured lines beneath each node, which tell you what its currently doing. Here's what the colours mean:</p><ul>
+<li>White: This node is idle, meaning it hasnt been activated yet and isnt doing anything.</li>
+<li>Yellow: This node is currently still running.</li>
+<li>Green: This node has finished running, and it managed to do whatever it was trying to do successfully (go you!)</li>
+<li>Red: This node has finished running, but it failed at doing what it was trying to do.</li>
+</ul>
+<p ><img src="https://cdn.discordapp.com/attachments/686335357406412949/986225309764448296/RuntimeDebugging.gif" alt="screenshot" class="inline"/></p>
+<h2><a class="anchor" id="autotoc_md14"></a>
 Creating your own nodes</h2>
 <p >New nodes can be created easily, and will be detected automatically by <a class="el" href="namespaceNodeAI.html">NodeAI</a>.</p>
 <p >To create one, simply create a new C# script, add an include for <a class="el" href="namespaceNodeAI.html">NodeAI</a>, and change the class it inherits from "monobehaviour" to one of the following:</p><ul>
@@ -175,7 +184,10 @@ Creating your own nodes</h2>
 <li><a href="/classNodeAI_1_1DecoratorBase.html">NodeAI.DecoratorBase</a>: For creating a decorator node.</li>
 <li><a href="/classNodeAI_1_1Query.html">NodeAI.Query</a>: For creating a query node.</li>
 </ul>
-<p >For more information on how creating nodes works, and code examples of how you can create them yourself, see the code documentation. </p>
+<p >For more information on how creating nodes works, and code examples of how you can create them yourself, see the code documentation.</p>
+<h2><a class="anchor" id="autotoc_md15"></a>
+Thats it from us, now go make games!</h2>
+<p ><img src="https://cdn.discordapp.com/attachments/686335357406412949/986225758580142160/RuntimeShowoff.gif" alt="screenshot" class="inline"/> </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
